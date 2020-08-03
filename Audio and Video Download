@@ -1,0 +1,20 @@
+# Download-Youtube-Videos-or-Playlist-or-Audio-with-Python
+// Download the package YouTube using command pip3 install YouTube
+
+try:
+    from pytube import YouTube
+    from pytube import Playlist
+except Exception as e:
+    print("Some Modules are Missing {}".format(e))
+
+url = ""
+// url for the video or audio that you need to download. 
+
+youtube = YouTube(url)
+// Create the object and pass in the url.
+
+// To download high resolution streams:
+print(youtube.streams.filter(progressive=True).all().download())
+
+// To download only audion:
+print(youtube.streams.filter(audio_only= True).all().download())
